@@ -53,13 +53,13 @@ public class UserValidationTest {
         Assert.assertFalse(result);
     }
     @Test
-    public void givenPassword_WhenProper_ShouldReturnTrue() {
+    public void givenPassword_WhenHasMinimumEightCharacter_ShouldReturnTrue() {
         UserValidation validation = new UserValidation();
-        boolean result = validation.ValidatePassword("newspaper");
+        boolean result = validation.ValidatePassword("newspaper11");
         Assert.assertTrue(result);
     }
     @Test
-    public void givenPassword_WhenNotProper_ShouldReturnFalse() {
+    public void givenPassword_WhenNotMinimumEightCharacter_ShouldReturnFalse() {
         UserValidation validation = new UserValidation();
         boolean result = validation.ValidatePassword("book");
         Assert.assertFalse(result);
