@@ -40,4 +40,16 @@ public class UserValidationTest {
         boolean result = validation.ValidateEmailAddress("uthsavi@com");
         Assert.assertFalse(result);
     }
+    @Test
+    public void givenMobileNumber_WhenProper_ShouldReturnTrue() {
+        UserValidation validation = new UserValidation();
+        boolean result = validation.ValidateMobileNumber("+916362404984");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenMobileNumber_WhenNotProper_ShouldReturnFalse() {
+        UserValidation validation = new UserValidation();
+        boolean result = validation.ValidateMobileNumber("636240498");
+        Assert.assertFalse(result);
+    }
 }
