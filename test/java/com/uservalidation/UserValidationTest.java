@@ -64,4 +64,16 @@ public class UserValidationTest {
         boolean result = validation.ValidatePassword("book");
         Assert.assertFalse(result);
     }
+    @Test
+    public void givenPassword_WhenHasAtleastOneUpperCase_ShouldReturnTrue() {
+        UserValidation validation = new UserValidation();
+        boolean result = validation.ValidatePassword("Newspaper11");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenPassword_WhenNotHaveAtleastOneUpperCase_ShouldReturnFalse() {
+        UserValidation validation = new UserValidation();
+        boolean result = validation.ValidatePassword("notebook");
+        Assert.assertFalse(result);
+    }
 }
