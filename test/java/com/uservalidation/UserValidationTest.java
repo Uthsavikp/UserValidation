@@ -76,4 +76,16 @@ public class UserValidationTest {
         boolean result = validation.ValidatePassword("notebook");
         Assert.assertFalse(result);
     }
+    @Test
+    public void givenPassword_WhenHasAtleastOneNumericNumber_ShouldReturnTrue() {
+        UserValidation validation = new UserValidation();
+        boolean result = validation.ValidatePassword("adArEss1");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenPassword_WhenNotHaveAtleastOneNumericNumber_ShouldReturnFalse() {
+        UserValidation validation = new UserValidation();
+        boolean result = validation.ValidatePassword("Newspaper");
+        Assert.assertFalse(result);
+    }
 }
