@@ -88,4 +88,16 @@ public class UserValidationTest {
         boolean result = validation.ValidatePassword("Newspaper");
         Assert.assertFalse(result);
     }
+    @Test
+    public void givenPassword_WhenHasExactlyOneSpecialCharacter_ShouldReturnTrue() {
+        UserValidation validation = new UserValidation();
+        boolean result = validation.ValidatePassword("NewsPaper1?");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenPassword_WhenDoesNotHaveExactlyOneSpecialCharacter_ShouldReturnFalse() {
+        UserValidation validation = new UserValidation();
+        boolean result = validation.ValidatePassword("Newspaper1??");
+        Assert.assertFalse(result);
+    }
 }
