@@ -16,4 +16,16 @@ public class UserValidationTest {
         boolean result = validation.ValidFirstName("uth");
         Assert.assertFalse(result);
     }
+    @Test
+    public void givenLastName_WhenProper_ShouldReturnTrue() {
+        UserValidation validation = new UserValidation();
+        boolean result = validation.ValidFirstName("Gowda");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenLastName_WhenNotProper_ShouldReturnFalse() {
+        UserValidation validation = new UserValidation();
+        boolean result = validation.ValidFirstName("go");
+        Assert.assertFalse(result);
+    }
 }

@@ -9,5 +9,9 @@ public class UserValidation {
         Pattern pattern = Pattern.compile(Name);
         return pattern.matcher(firstName).matches();
     }
+    public boolean ValidLastName(String lastName){
+        Pattern pattern = Pattern.compile(Name);
+        return pattern.matcher(lastName).matches();
+    }
 }
 
