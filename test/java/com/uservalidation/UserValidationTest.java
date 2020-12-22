@@ -19,13 +19,13 @@ public class UserValidationTest {
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
         UserValidation validation = new UserValidation();
-        boolean result = validation.ValidFirstName("Gowda");
+        boolean result = validation.ValidLastName("Gowda");
         Assert.assertTrue(result);
     }
     @Test
     public void givenLastName_WhenNotProper_ShouldReturnFalse() {
         UserValidation validation = new UserValidation();
-        boolean result = validation.ValidFirstName("go");
+        boolean result = validation.ValidLastName("go");
         Assert.assertFalse(result);
     }
 }
